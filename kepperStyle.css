@@ -1,1 +1,76 @@
-/*# sourceMappingURL=kepperStyle.css.map */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html, body {
+  width: 100%;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+#wrapper {
+  width: 500px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 5px 5px gray;
+}
+#wrapper img {
+  width: 100%;
+}
+#wrapper #title-wrapper {
+  width: 100%;
+  padding: 12px 10px;
+  border-bottom: 1px #D3D3D3 solid;
+}
+#wrapper #title-wrapper h1 {
+  font-size: 1rem;
+}
+#wrapper #contents-wrapper {
+  padding: 10px;
+}
+#wrapper #contents-wrapper #scores {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+#wrapper #contents-wrapper #explain {
+  font-size: 1rem;
+  color: #8b8b8b;
+}
+#wrapper #contents-wrapper #round-wrapper {
+  margin: 12px 0px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+#wrapper #buttons {
+  width: 100%;
+  display: flex;
+}
+#wrapper #buttons button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+#wrapper #buttons button#player1 {
+  background-color: #7EC0B2;
+}
+#wrapper #buttons button#player1:active {
+  background-color: rgba(126, 192, 178, 0.5333333333);
+}
+#wrapper #buttons button#player2 {
+  background-color: #FFD082;
+}
+#wrapper #buttons button#player2:active {
+  background-color: rgba(255, 208, 130, 0.5333333333);
+}
+#wrapper #buttons button#reset {
+  background-color: #F96D6C;
+}
+#wrapper #buttons button#reset:active {
+  background-color: rgba(249, 109, 108, 0.5333333333);
+}/*# sourceMappingURL=kepperStyle.css.map */

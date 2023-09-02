@@ -1,3 +1,80 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html, body {
+  width: 100%;
+}
+
+div {
+  box-sizing: border-box;
+}
+
 #wrapper {
-  
+  width: 500px;
+  margin: 0px auto;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 5px 5px gray;
+
+  img {
+    width: 100%;
+  }
+  #title-wrapper {
+    width: 100%;
+    padding: 12px 10px;
+    border-bottom: 1px #D3D3D3 solid;
+    h1 {
+      font-size: 1rem;
+    }
+  }
+
+  #contents-wrapper {
+    padding: 10px;
+    #scores {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    #explain { 
+      font-size: 1rem;
+      color: #8b8b8b;
+    }
+    #round-wrapper {
+      margin: 12px 0px;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+  }
+
+  #buttons {
+    width: 100%;
+    display: flex;
+    button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 2px;
+      &#player1 {
+        background-color: #7EC0B2;
+        &:active {
+          background-color: #7ec0b288;
+        }
+      }
+      &#player2 {
+        background-color: #FFD082;
+        &:active {
+          background-color: #FFD08288;
+        }
+      }
+      &#reset {
+        background-color: #F96D6C;
+        &:active {
+          background-color: #F96D6C88;
+        }
+      }
+    }
+  }
 }

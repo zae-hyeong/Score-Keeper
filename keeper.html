@@ -9,7 +9,35 @@
 </head>
 <body>
   <div id="wrapper">
-
+    <img src="./pingpong-img.jpg" alt="탁구공 이미지">
+    <div id="title-wrapper">
+      <h1>Ping Pong Score Keeper</h1>
+    </div>
+    <div id="contents-wrapper">
+      <p id="scores"><span id="score1">0</span> to <span id="score2">0</span></p>
+      <p id="explain">Use the button below to keep score.</p>
+      <div id="round-wrapper">
+        <label>Plaing To</label>
+        <span id="rounds">
+          <select name="rounds" id="numOfRounds">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+        </select>
+        </span>
+      </div>
+    </div>
+    <div id="buttons">
+      <button id="player1">+1 Player One</button>
+      <button id="player2">+1 Player Two</button>
+      <button id="reset">Reset</button>
+    </div>
   </div>
 </body>
 </html>
