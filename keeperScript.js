@@ -22,12 +22,30 @@ const addScoreTo = function(target) {
 
 $player1.addEventListener('click', () => {
   addScoreTo($score1);
+  let score = Number($score1.innerText);
+  if(score >= endScore) {
+    $score1.style.color = '#7EC0B2';
+    $score2.style.color = '#F96D6C';
+    $player1.disabled = true;
+    $player2.disabled = true;
+  }
 });
 $player2.addEventListener('click', () => {
   addScoreTo($score2);
+  let score = Number($score2.innerText);
+  if(score >= endScore) {
+    $score2.style.color = '#7EC0B2';
+    $score1.style.color = '#F96D6C';
+    $player2.disabled = true;
+    $player1.disabled = true;
+  }
 });
 
 $reset.addEventListener('click', () => {
   $score1.innerText = '0';
   $score2.innerText = '0';
+  $score1.style.color = 'black';
+  $score2.style.color = 'black';
+  $player2.disabled = false;
+  $player1.disabled = false;
 });
