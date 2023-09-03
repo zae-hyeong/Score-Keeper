@@ -14,18 +14,20 @@ $roundSelector.addEventListener('change', () => {
   console.log(`value : ${endScore}`);
 });
 
-function addScoreTo(target) {
-  
-}
+const addScoreTo = function(target) {
+  let score = Number(target.innerText) + 1;
+  target.innerText = score;
+  console.log(score);
+};
 
 $player1.addEventListener('click', () => {
-  let score = Number($score1.innerText) + 1;
-  $score1.innerText = score;
-  console.log(score);
+  addScoreTo($score1);
 });
 $player2.addEventListener('click', () => {
-  let score = Number($score2.innerText) + 1;
-  $score2.innerText = score;
-  console.log(score);
+  addScoreTo($score2);
 });
 
+$reset.addEventListener('click', () => {
+  $score1.innerText = '0';
+  $score2.innerText = '0';
+});
