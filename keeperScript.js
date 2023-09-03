@@ -1,51 +1,74 @@
-const $player1 = document.getElementById('player1');
-const $player2 = document.getElementById('player2');
+let endScore = 3;
+let isGameOVer = false;
+
+const player1 = {
+  score: 0,
+  button: document.getElementById('player1'),
+  scoreBoard: document.getElementById('score1')
+}
+
+const player2 = {
+  score: 0,
+  button: document.getElementById('player2'),
+  scoreBoard: document.getElementById('score2')
+}
+
 const $reset = document.getElementById('reset');
-
-const $score1 = document.getElementById('score1');
-const $score2 = document.getElementById('score2');
-
 const $roundSelector = document.getElementById('numOfRounds');
 
-let endScore = 3;
+$reset.addEventListener('click', () => {
+  resetScore();
+  resetScoreBoard();
+  disableButtons(false);
+});
+
+function resetScore() {
+  player1.score = 0;
+  player2.score = 0;
+}
+
+function resetScoreBoard() {
+  player1.scoreBoard.innerText = '0';
+  player2.scoreBoard.innerText = '0';
+  player1.scoreBoard.style.color = 'black';
+  player2.scoreBoard.style.color = 'black';
+}
 
 $roundSelector.addEventListener('change', () => {
   endScore = Number($roundSelector.options[$roundSelector.selectedIndex].value);
-  console.log(`value : ${endScore}`);
 });
 
-const addScoreTo = function(target) {
-  let score = Number(target.innerText) + 1;
-  target.innerText = score;
-  console.log(score);
+player1.button.addEventListener('click', () => {
+  addScoreTo(player1);
+  if(player1.score >= endScore) {
+    selectWinnerAndLoser(player1.scoreBoard, player2.scoreBoard);
+  }
+});
+
+player2.button.addEventListener('click', () => {
+  addScoreTo(player2);
+  if(player2.score >= endScore) {
+    selectWinnerAndLoser(player2.scoreBoard, player1.scoreBoard);
+  }
+});
+
+const addScoreTo = function(player) {
+  player.score += 1;
+  player.scoreBoard.innerText = player.score;
 };
 
-$player1.addEventListener('click', () => {
-  addScoreTo($score1);
-  let score = Number($score1.innerText);
-  if(score >= endScore) {
-    $score1.style.color = '#7EC0B2';
-    $score2.style.color = '#F96D6C';
-    $player1.disabled = true;
-    $player2.disabled = true;
-  }
-});
-$player2.addEventListener('click', () => {
-  addScoreTo($score2);
-  let score = Number($score2.innerText);
-  if(score >= endScore) {
-    $score2.style.color = '#7EC0B2';
-    $score1.style.color = '#F96D6C';
-    $player2.disabled = true;
-    $player1.disabled = true;
-  }
-});
+const selectWinnerAndLoser = function(winner, loser) {
+  winner.style.color = '#7EC0B2';
+  loser.style.color = '#F96D6C';
+  disableButtons(true);
+}
 
-$reset.addEventListener('click', () => {
-  $score1.innerText = '0';
-  $score2.innerText = '0';
-  $score1.style.color = 'black';
-  $score2.style.color = 'black';
-  $player2.disabled = false;
-  $player1.disabled = false;
-});
+const disableButtons = function(flag) {
+  if(flag) {
+    player1.button.disabled = true;
+    player2.button.disabled = true;
+  } else {
+    player1.button.disabled = false;
+    player2.button.disabled = false;
+  }
+}
