@@ -1,3 +1,5 @@
+![asgasgaew](https://github.com/zae-hyeong/Score-Keeper/assets/58213558/45c20cf7-9eb4-47d5-9e00-e1caa7403c42)
+
 ## 🔗Project Link
 
 Git Hub : https://github.com/zae-hyeong/Score-Keeper
@@ -5,14 +7,16 @@ Git Hub : https://github.com/zae-hyeong/Score-Keeper
 ## 🤔Problem Statement
 
 ### 시작한 이유
-
+CSS와 HTML에만 집중했던 웹 디자인 기능사 공부에서 JS의 기능적 측면을 더욱 활용해보고자 했으며,<br/>
 JS에서 사용 가능한 가장 기본적인 기능들을 구현한 작은 프로젝트를 통해 DOM 조작에 익숙해지고자 했다.
 
 ### 목표
 
-- 점수 카운팅 : 버튼을 누르면 점수가 오른다.
-- reset 버튼 : 점수가 초기화된다.
-- 게임 오버 : 기준 점수를 넘어가면 승패가 시각화되며 버튼이 비활성화 된다.
+<ol>
+  <li>점수 카운팅 : 버튼을 누르면 점수가 오른다.</li>
+  <li>reset 버튼 : 점수가 초기화된다.</li>
+  <li>게임 오버 : 기준 점수를 넘어가면 승패가 시각화되며 버튼이 비활성화 된다.</li>
+</ol>
 
 ## 🤷‍♂️Project Result & Impression
 
